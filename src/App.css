@@ -1,0 +1,75 @@
+.App {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.hero {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #4c6ef5, #7950f2);
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero h2 {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+  font-weight: 300;
+}
+
+.hero p {
+  max-width: 600px;
+  margin: auto;
+  line-height: 1.5;
+}
+
+/* MAIN */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.section {
+  background: #ffffff;
+  padding: 25px;
+  margin-bottom: 30px;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+  color: #4c6ef5;
+}
+
+.project {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+  background: #fdfdff;
+}
+
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #e9ecef;
+  margin-top: 30px;
+}
+
+/* LINKS */
+a {
+  color: #4c6ef5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

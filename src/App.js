@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./App.css";
 import profilePic from "./assets/profile.jpg"; // make sure this path is correct
+import { FaGithub, FaLinkedin, FaDownload, FaEnvelope, FaPhoneAlt } from "react-icons/fa";
+
 
 const workExperience = [
   {
@@ -96,10 +98,6 @@ function WorkExperienceSection() {
 }
 
 function App() {
-  const EMAIL = "prathyusha.lokesh1k@gmail.com";
-  const PHONE = "(616) 414-4970";
-  const LINKEDIN = "https://www.linkedin.com/in/koduru1p/";
-
   return (
     <div className="app-root">
       <div className="shell">
@@ -151,30 +149,41 @@ function App() {
                   </div>
 
                   <div className="hero-right-actions">
-                    <a
-                      href="https://github.com/kl-prathyusha"
-                      className="icon-badge"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <span className="icon-circle">GH</span>
-                      <span className="icon-label">GitHub</span>
-                    </a>
+                    <div className="hero-right-actions icon-only-row">
 
-                    <a href={`mailto:${EMAIL}`} className="icon-badge">
-                      <span className="icon-circle">@</span>
-                      <span className="icon-label">Email</span>
-                    </a>
+                      <a
+                        href="https://github.com/kl-prathyusha"
+                        className="icon-only tooltip"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="GitHub"
+                      >
+                        <FaGithub size={18} />
+                        <span className="tooltip-text">GitHub</span>
+                      </a>
 
-                    <a
-                      href="/resume.pdf"
-                      className="icon-badge"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <span className="icon-circle">⬇</span>
-                      <span className="icon-label">Resume</span>
-                    </a>
+                      <a
+                        href="https://www.linkedin.com/in/koduru1p/"
+                        className="icon-only tooltip"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="LinkedIn"
+                      >
+                        <FaLinkedin size={18} />
+                        <span className="tooltip-text">LinkedIn</span>
+                      </a>
+
+                      <a
+                        href="/resume.pdf"
+                        className="icon-only tooltip"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="Download Resume"
+                      >
+                        <FaDownload size={18} />
+                        <span className="tooltip-text">Resume</span>
+                      </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -235,15 +244,21 @@ function App() {
                   <div className="timeline-dot" />
                   <div className="timeline-content">
                     <h3>Git Workflow</h3>
-                    <p>Feature branches, clean commits, PRs, and code reviews.</p>
+                    <p>
+                      Work with feature branches, clean commit history, and structured pull requests.
+                      Review code collaboratively to maintain quality and reduce regressions.
+                    </p>
+
                   </div>
                 </li>
 
                 <li>
                   <div className="timeline-dot" />
                   <div className="timeline-content">
-                    <h3>Agile / Scrum</h3>
-                    <p>Stand-ups, sprint planning, grooming, and retrospectives.</p>
+                    <h3>Agile / Scrum</h3><p>
+                      Build and package services using Maven/Gradle and npm with environment-specific configs.
+                      Support CI/CD pipelines and ensure reliable, repeatable deployments.
+                    </p>
                   </div>
                 </li>
 
@@ -251,7 +266,11 @@ function App() {
                   <div className="timeline-dot" />
                   <div className="timeline-content">
                     <h3>Build &amp; Delivery</h3>
-                    <p>Maven/Gradle + npm, testing basics, and CI/CD exposure.</p>
+                    <p>
+                      Build and package services using Maven/Gradle and npm with environment-specific configs.
+                      Support CI/CD pipelines and ensure reliable, repeatable deployments.
+                    </p>
+
                   </div>
                 </li>
 
@@ -259,10 +278,35 @@ function App() {
                   <div className="timeline-dot" />
                   <div className="timeline-content">
                     <h3>Production Support</h3>
-                    <p>Log analysis, reproducing bugs, safe fixes, regression checks.</p>
+                    <p>
+                      Investigate production issues through logs, metrics, and reproducible scenarios.
+                      Apply safe fixes, validate changes, and monitor post-release behavior.
+                    </p>
+
                   </div>
                 </li>
               </ul>
+
+              {/* Subtle animations under Core Skills */}
+              <div className="skills-animations">
+                <div className="card full-width">
+                  {/* Flow animation */}
+                  <div className="skill-flow" aria-label="System flow: Frontend to Backend to Data to AI">
+                    <div className="flow-track">
+                      <span className="flow-node">Frontend</span>
+                      <span className="flow-node">API</span>
+                      <span className="flow-node">Backend</span>
+                      <span className="flow-node">Data</span>
+                      <span className="flow-node">AI</span>
+
+                      <span className="flow-dot" aria-hidden="true" />
+                    </div>
+                    <p className="flow-caption">
+                      A typical delivery path: UI → services → data → intelligent features.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </section>
 
             {/* ✅ RIGHT HALF — AI/ML (keep your old points) */}
@@ -340,7 +384,6 @@ function App() {
               </a>
             </section>
 
-            {/* ✅ FULL WIDTH */}
             <WorkExperienceSection />
 
             <section id="projects" className="card full-width">
@@ -396,51 +439,42 @@ function App() {
                 </article>
               </div>
             </section>
-
-            <section id="contact" className="card full-width">
-              <h2 className="section-title">Contact</h2>
-              <p className="section-intro">
-                The easiest way to reach me is by email or via GitHub / LinkedIn.
+            <section id="contact" className="card full-width contact-compact">
+              <h2 className="section-title contact-title">Contact</h2>
+              <p className="section-intro contact-intro">
+                Open to full-stack and backend roles.
               </p>
 
-              <div className="contact-grid">
-                <div>
-                  <p className="contact-label">Email</p>
-                  <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                </div>
+              <div className="contact-inline">
+                <a
+                  href="mailto:prathyusha.lokesh1k@gmail.com"
+                  className="contact-inline-item"
+                  aria-label="Email me"
+                >
+                  <FaEnvelope />
+                  <span>prathyusha.lokesh1k@gmail.com</span>
+                </a>
 
-                <div>
-                  <p className="contact-label">Phone</p>
-                  <a href={`tel:${PHONE.replace(/[^\d+]/g, "")}`}>{PHONE}</a>
-                </div>
+                <span className="contact-divider">•</span>
 
-                <div>
-                  <p className="contact-label">GitHub</p>
-                  <a
-                    href="https://github.com/kl-prathyusha"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    github.com/kl-prathyusha
-                  </a>
-                </div>
-
-                <div>
-                  <p className="contact-label">LinkedIn</p>
-                  <a href={LINKEDIN} target="_blank" rel="noreferrer">
-                    linkedin.com/in/koduru1p
-                  </a>
-                </div>
+                <a
+                  href="tel:+16164144970"
+                  className="contact-inline-item"
+                  aria-label="Call me"
+                >
+                  <FaPhoneAlt />
+                  <span>(616) 414-4970</span>
+                </a>
               </div>
             </section>
-          </section>
 
-          <footer className="footer">
-            <span>© {new Date().getFullYear()} Prathyusha • Portfolio</span>
-          </footer>
+            <footer className="footer">
+              <span>© {new Date().getFullYear()} Prathyusha • Portfolio</span>
+            </footer>
+          </section>
         </main>
       </div>
-    </div>
+    </div >
   );
 }
 
